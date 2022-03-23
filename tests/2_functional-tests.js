@@ -103,7 +103,7 @@ suite("Functional Tests", function () {
           .request(server)
           .get("/api/stock-prices")
           .query({ stock, like })
-          .end(async (err, res) => {
+          .end((err, res) => {
             assert.equal(res.status, 200);
             assert.isArray(res.body.stockData, "stockData should be an Array");
             assert.equal(res.body.stockData[0].stock, stock[0]);
